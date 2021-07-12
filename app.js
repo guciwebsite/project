@@ -7,6 +7,7 @@ const qrcode = require('qrcode');
 const { phoneNumberFormatter } = require('./helpers/formatter');
 const fs = require('fs');
 // const client = new Client();
+const port = process.env.PORT || 8000;
 
 const app = express();
 const server = http.createServer(app);
@@ -170,6 +171,6 @@ const checkRegisteredNumber = async function(number) {
 // });
 
 
-server.listen(8000, function(){
-	console.log('app run' + 8000)
+server.listen(port, function(){
+	console.log('app run' + port)
 })
