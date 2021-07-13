@@ -7,7 +7,7 @@ const qrcode = require('qrcode');
 const { phoneNumberFormatter } = require('./helpers/formatter');
 const fs = require('fs');
 // const client = new Client();
-const port2 = process.env.port || 8000;
+const port2 = process.env.PORT || 8000;
 
 const app = express();
 const server = http.createServer(app);
