@@ -10,7 +10,7 @@ const axios = require('axios');
 const ejs = require("ejs");
 const fs = require('fs');
 // const client = new Client();
-const PORT = process.env.port|| 8000;
+const port = process.env.PORT|| 8000;
 
 const app = express();
 const server = http.createServer(app);
@@ -467,6 +467,6 @@ app.post('/sendmedia', async (req, res) => {
 //   return isRegistered;
 // }
 
-server.listen(PORT, function(){
-	console.log('app run' + PORT)
+server.listen(port, function(){
+	console.log('app run' + port)
 })
