@@ -2,7 +2,7 @@
   "name": "whatsapp",
   "version": "1.0.0",
   "description": "whatsapp",
-  "main": "app.js",
+  "main": "multi.js",
   "scripts": {
     "start": "nodemon multi.js",
     "start:dev": "nodemon multi.js",
