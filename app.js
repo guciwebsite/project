@@ -7,7 +7,7 @@ const qrcode = require('qrcode');
 const { phoneNumberFormatter } = require('./helpers/formatter');
 const fs = require('fs');
 // const client = new Client();
-const port2 = process.env.PORT || 8000;
+const PORT = process.env.port||'8000';
 
 const app = express();
 const server = http.createServer(app);
@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+
 
 app.get('/', (req, res,) => {
 	// res.status(200).json({
@@ -116,61 +117,9 @@ const checkRegisteredNumber = async function(number) {
   return isRegistered;
 }
 
-// Send message
-// app.post('/send-message', [
-//   body('number').notEmpty(),
-//   body('message').notEmpty(),
-// ], async (req, res) => {
-//   const errors = validationResult(req).formatWith(({
-//     msg
-//   }) => {
-//     return msg;
-//   });
-
-//   if (!errors.isEmpty()) {
-//     return res.status(422).json({
-//       status: false,
-//       message: errors.mapped()
-//     });
-//   }
-
-//   const number = phoneNumberFormatter(req.body.number);
-//   const message = req.body.message;
-
-//   const isRegisteredNumber = await checkRegisteredNumber(number);
-
-//   if (!isRegisteredNumber) {
-//     return res.status(422).json({
-//       status: false,
-//       message: 'The number is not registered'
-//     });
-//   }
-// // app.post('/send-message', (req, res) => {
-// // 	const number = req.body.number;
-// // 	const message = req.body.message;
-
-//   client.sendMessage(number, message).then(response => {
-//     res.status(200).json({
-//       status: true,
-//       response: response
-//     });
-//   }).catch(err => {
-//     res.status(500).json({
-//       status: false,
-//       response: err
-//     });
-//   });
-// });
-
-// client.on('message_create', (msg) => {
-//     // Fired on all message creations, including your own
-//     if (msg.fromMe) {
-//         // do stuff here
-//         console.log(msg)
-//     }
-// });
 
 
-server.listen(port2, function(){
-	console.log('app run' + port2)
+
+server.listen(PORT, function(){
+	console.log('app run' + PORT)
 })
