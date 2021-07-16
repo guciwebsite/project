@@ -10,7 +10,7 @@ const axios = require('axios');
 const ejs = require("ejs");
 const fs = require('fs');
 // const client = new Client();
-const PORT = process.env.port|| 8000;
+const PORT = process.env.port|| '8000';
 
 const app = express();
 const server = http.createServer(app);
